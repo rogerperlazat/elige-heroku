@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "elige-heroku"
+    }
+  },
+  "defaultProject": "elige-heroku",
+  "cli": {
+    "analytics": "37dd009c-7f43-42ac-a1b2-cde9eb6ab6d3"
+  }
 }
