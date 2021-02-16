@@ -1,0 +1,17 @@
+<form [formGroup]="loginForm">
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Correo Electrónico</mat-label>
+      <input type="email" matInput #input placeholder="correo@dominio.com" formControlName="email">
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Contraseña</mat-label>
+      <input type="password" matInput #input placeholder="***+" formControlName="password">
+    </mat-form-field>
+    <label class="error">{{errorMessage}}</label>
+    <label class="success">{{successMessage | json}}</label>
+  </div>
+  <button type="submit" (click)="tryLogin(loginForm.value)" mat-button color="primary">Iniciar Sesion</button>
+</form>
