@@ -1,1 +1,51 @@
-<p>corporations works!</p>
+<form [formGroup]="corporationsForm">
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Corporación</mat-label>
+      <input type="text" matInput #input placeholder="1" formControlName="corporation">
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Imagen</mat-label>
+      <input type="text" matInput #input placeholder="1" formControlName="image">
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Jornada</mat-label>
+      <mat-select formControlName="time">
+        <mat-option value="M">Mañana</mat-option>
+        <mat-option value="T">Tarde</mat-option>
+        <mat-option value="N">Noche</mat-option>
+        <mat-option value="P">Primaria</mat-option>
+        <mat-option value="S">Secundaria</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Estado</mat-label>
+      <mat-select formControlName="status">
+        <mat-option value="1">Activo</mat-option>
+        <mat-option value="0">Inactivo</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <button type="submit" (click)="saveCorporations()" mat-button color="primary">Guardar</button>
+</form>
+
+<table>
+  <tr>
+    <td>Corporacion</td>
+    <td>Imagen</td>
+    <td>Jornada</td>
+    <td>Estado</td>
+  </tr>
+  <tr *ngFor="let corporation of corporations">
+    <td>{{corporation.corporation}}</td>
+    <td>{{corporation.image}}</td>
+    <td>{{corporation.time}}</td>
+    <td>{{corporation.status}}</td>
+  </tr>
+</table>
