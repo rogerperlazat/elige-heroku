@@ -25,6 +25,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { CorporationsComponent } from './corporations/corporations.component';
 import { GradesComponent } from './grades/grades.component';
 import { GroupsComponent } from './groups/groups.component';
+import { VoterComponent } from './voter/voter.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { GroupsComponent } from './groups/groups.component';
     LoginComponent,
     CorporationsComponent,
     GradesComponent,
-    GroupsComponent
+    GroupsComponent,
+    VoterComponent
   ],
   imports: [
     BrowserModule,

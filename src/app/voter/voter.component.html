@@ -1,0 +1,55 @@
+<form [formGroup]="voterForm">
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo de documento</mat-label>
+      <mat-select formControlName="idPiType">
+        <mat-option value="1">Tarjeta de indentidad</mat-option>
+        <mat-option value="2">Cedula</mat-option>
+        <mat-option value="3">NES</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Numero de documento</mat-label>
+      <input type="text" matInput #input placeholder="1" formControlName="piNumber">
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Nombre completo</mat-label>
+      <input type="text" matInput #input placeholder="1" formControlName="name">
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Grado</mat-label>
+      <mat-select formControlName="groupId">
+        <ng-container *ngFor="let group of groups">
+          <mat-option value="{{group._id}}">{{group.group}}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <button type="submit" (click)="saveVoter()" mat-button color="primary">Guardar</button>
+</form>
+
+<table>
+  <tr>
+    <td>Tipo de documento</td>
+    <td>Numero de documento</td>
+    <td>Nombre completo</td>
+    <td>Grado</td>
+    <td>Ha votado</td>
+  </tr>
+  <tr *ngFor="let voter of voters">
+    <td>{{voter.idPiType}}</td>
+    <td>{{voter.piNumber}}</td>
+    <td>{{voter.name}}</td>
+    <td>{{voter.groupId}}</td>
+    <td>{{voter.hasVoted}}</td>
+  </tr>
+</table>
+
+
+

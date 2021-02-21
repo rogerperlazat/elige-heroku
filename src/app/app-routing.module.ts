@@ -1,3 +1,4 @@
+import { VoterComponent } from './voter/voter.component';
 import { GroupsComponent } from './groups/groups.component';
 import { GradesComponent } from './grades/grades.component';
 import { CorporationsComponent } from './corporations/corporations.component';
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'grupos',
     component: GroupsComponent
+  },
+  {
+    path: 'votantes',
+    component: VoterComponent
   }
 ];
 
