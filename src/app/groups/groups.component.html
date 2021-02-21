@@ -1,0 +1,51 @@
+<form [formGroup]="groupForm">
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Grado</mat-label>
+      <mat-select formControlName="idGrade">
+        <ng-container *ngFor="let grade of grades">
+          <mat-option value="{{grade._id}}">{{grade.title}}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Grupo</mat-label>
+      <input type="text" matInput #input placeholder="1" formControlName="group">
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Jornada</mat-label>
+      <mat-select formControlName="time">
+        <mat-option value="M">Mañana</mat-option>
+        <mat-option value="T">Tarde</mat-option>
+        <mat-option value="N">Noche</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Campus</mat-label>
+      <mat-select formControlName="campus">
+        <mat-option value="A">A</mat-option>
+        <mat-option value="B">B</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <button type="submit" (click)="saveGroup()" mat-button color="primary">Guardar</button>
+</form>
+
+<table>
+  <tr>
+    <td>Grupo</td>
+    <td>Jornada</td>
+    <td>Campus</td>
+  </tr>
+  <tr *ngFor="let group of groups">
+    <td>{{group.group}}</td>
+    <td>{{group.time}}</td>
+    <td>{{group.campus}}</td>
+  </tr>
+</table>

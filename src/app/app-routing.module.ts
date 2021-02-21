@@ -1,3 +1,4 @@
+import { GroupsComponent } from './groups/groups.component';
 import { GradesComponent } from './grades/grades.component';
 import { CorporationsComponent } from './corporations/corporations.component';
 import { AuthComponent } from './auth/auth.component';
@@ -21,8 +22,11 @@ const routes: Routes = [
   {
     path: 'grados',
     component: GradesComponent
+  },
+  {
+    path: 'grupos',
+    component: GroupsComponent
   }
-
 ];
 
 @NgModule({

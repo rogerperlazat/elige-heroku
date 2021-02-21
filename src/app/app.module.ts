@@ -24,6 +24,7 @@ import { AngularFirestoreModule } from '@angular/fire/firestore';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { CorporationsComponent } from './corporations/corporations.component';
 import { GradesComponent } from './grades/grades.component';
+import { GroupsComponent } from './groups/groups.component';
 
 
 @NgModule({
@@ -34,7 +35,8 @@ import { GradesComponent } from './grades/grades.component';
     RegisterComponent,
     LoginComponent,
     CorporationsComponent,
-    GradesComponent
+    GradesComponent,
+    GroupsComponent
   ],
   imports: [
     BrowserModule,
