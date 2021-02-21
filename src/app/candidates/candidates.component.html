@@ -1,0 +1,75 @@
+<form [formGroup]="candidatesForm">
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Votante</mat-label>
+      <mat-select formControlName="idVoter">
+        <ng-container *ngFor="let voter of voters">
+          <mat-option value="{{voter._id}}">{{voter.name}}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Corporacion</mat-label>
+      <mat-select formControlName="idCorporation">
+        <ng-container *ngFor="let corporation of corporations">
+          <mat-option value="{{corporation._id}}">{{corporation.corporation}}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Numero de tarjeton</mat-label>
+      <input type="text" matInput #input placeholder="1" formControlName="cardNumber">
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Imagen</mat-label>
+      <input type="url" matInput #input placeholder="1" formControlName="image">
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Tipo</mat-label>
+      <mat-select formControlName="type">
+        <mat-option value="Estudiante">Estudiante</mat-option>
+        <mat-option value="Docente">Docente</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Estado</mat-label>
+      <mat-select formControlName="status">
+        <mat-option value="1">Activo</mat-option>
+        <mat-option value="0">Inactivo</mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <button type="submit" (click)="saveCandidate()" mat-button color="primary">Guardar</button>
+</form>
+
+<table>
+  <tr>
+    <td>Votante</td>
+    <td>Corporacion</td>
+    <td>Tarjeton</td>
+    <td>Imagen</td>
+    <td>Tipo</td>
+    <td>Estado</td>
+  </tr>
+  <tr *ngFor="let candidates of candidates">
+    <td>{{candidates.idVoter}}</td>
+    <td>{{candidates.idCorporation}}</td>
+    <td>{{candidates.cardNumber}}</td>
+    <td>{{candidates.image}}</td>
+    <td>{{candidates.type}}</td>
+    <td>{{candidates.status}}</td>
+  </tr>
+</table>
+
+
+

@@ -1,3 +1,4 @@
+import { CandidatesComponent } from './candidates/candidates.component';
 import { VoterComponent } from './voter/voter.component';
 import { GroupsComponent } from './groups/groups.component';
 import { GradesComponent } from './grades/grades.component';
@@ -31,8 +32,14 @@ const routes: Routes = [
   {
     path: 'votantes',
     component: VoterComponent
+  },
+  {
+    path: 'candidatos',
+    component: CandidatesComponent
   }
 ];
+
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes, { relativeLinkResolution: 'legacy' })],

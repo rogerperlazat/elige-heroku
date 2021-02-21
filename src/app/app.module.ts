@@ -26,6 +26,7 @@ import { CorporationsComponent } from './corporations/corporations.component';
 import { GradesComponent } from './grades/grades.component';
 import { GroupsComponent } from './groups/groups.component';
 import { VoterComponent } from './voter/voter.component';
+import { CandidatesComponent } from './candidates/candidates.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { VoterComponent } from './voter/voter.component';
     CorporationsComponent,
     GradesComponent,
     GroupsComponent,
-    VoterComponent
+    VoterComponent,
+    CandidatesComponent
   ],
   imports: [
     BrowserModule,
