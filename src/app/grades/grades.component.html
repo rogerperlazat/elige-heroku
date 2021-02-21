@@ -1,0 +1,26 @@
+<form [formGroup]="gradeForm">
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Grado</mat-label>
+      <input type="number" matInput #input placeholder="1" formControlName="grade">
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Titulo</mat-label>
+      <input type="text" matInput #input placeholder="primero" formControlName="title">
+    </mat-form-field>
+  </div>
+  <button type="submit" (click)="saveGrade()" mat-button color="primary">Guardar</button>
+</form>
+
+<table>
+  <tr>
+    <td>Grado</td>
+    <td>Titulo</td>
+  </tr>
+  <tr *ngFor="let grade of grades">
+    <td>{{grade.grade}}</td>
+    <td>{{grade.title}}</td>
+  </tr>
+</table>

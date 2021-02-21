@@ -1,3 +1,4 @@
+import { GradesComponent } from './grades/grades.component';
 import { CorporationsComponent } from './corporations/corporations.component';
 import { AuthComponent } from './auth/auth.component';
 import { SearchVotersComponent } from './search-voters/search-voters.component';
@@ -16,6 +17,10 @@ const routes: Routes = [
   {
     path: 'corporaciones',
     component: CorporationsComponent
+  },
+  {
+    path: 'grados',
+    component: GradesComponent
   }
 
 ];
