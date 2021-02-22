@@ -1,7 +1,9 @@
+import { VoterService } from './../shared/services/voter/voter.service';
 import { CorporationsService } from './../shared/services/corporations/corporations.service';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-corporation-voter',
@@ -14,6 +16,8 @@ export class CorporationVoterComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder,
     private router: Router,
+    private voterService: VoterService,
+    private _snackBar: MatSnackBar,
     private corporationsService: CorporationsService) { }
 
   ngOnInit(): void {
@@ -26,8 +30,30 @@ export class CorporationVoterComponent implements OnInit {
     });
   }
 
-  voteCorporation(id: string){
-    this.router.navigate(["votar-candidato", { corporation: id }]);
+  voteCorporation(id: string) {
+    this.getVotesByVoter(id);
+  }
+
+
+  getVotesByVoter(idCorporation: string) {
+    let dataVoter: any = {};
+    dataVoter.idVoter = "1";
+    dataVoter.idCorporation = idCorporation;
+    console.log(dataVoter);
+    this.voterService.getStatusVote(dataVoter).subscribe((res: any) => {
+      if(res.length){
+        this.openSnackBar("Ya realizo esta votacion", "");
+      }else{
+        this.router.navigate(["votar-candidato", { corporation: idCorporation }]);
+      }
+    });
+  }
+
+
+  openSnackBar(message: string, action: string) {
+    this._snackBar.open(message, action, {
+      duration: 1000,
+    });
   }
 
 }

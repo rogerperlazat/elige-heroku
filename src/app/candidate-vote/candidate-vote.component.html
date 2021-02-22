@@ -1,14 +1,51 @@
-<mat-radio-group formControlName="">
+<form [formGroup]="votesForm">
 
-  <ng-container *ngFor="let candidate of candidates">
+  <div class="general">
 
-    <div class="example-ripple-container mat-elevation-z4" matRipple [matRippleCentered]="true"
-      [matRippleDisabled]="false">
-      <img src="{{candidate.image}}" />
-      <p>{{candidate.cardNumber}}</p>
-      <mat-radio-button value="{{candidate.idVoter}}" >{{candidate.cardNumber}}</mat-radio-button>
+    <div class="left">
+      <p>ELIGE</p>
+      <p>Gobierno Escolar 2019</p>
     </div>
 
-  </ng-container>
+    <div class="center">
+      <img src="/assets/images/logo.jpeg" height="200px"/>
+    </div>
 
-</mat-radio-group>
+    <div class="right">
+      <p>Colegio CEDID San Pablo</p>
+      <p>Bienvenido(a)</p>
+      <p>Votante</p>
+    </div>
+
+  </div>
+
+  <h1 class="title">{{corporations[0].corporation}}</h1>
+  <mat-grid-list cols="{{corporations.length}}" rowHeight="400px" class="candidates">
+
+    <mat-radio-group formControlName="idCandidate">
+
+      <ng-container *ngFor="let corporation of corporations">
+
+        <mat-grid-tile>
+
+          <div class="example-ripple-container mat-elevation-z4" matRipple [matRippleCentered]="true"
+            [matRippleDisabled]="false">
+            <img src="{{corporation.candidates.image}}" />
+            <p>{{corporation.voters[0].name}}</p>
+            <mat-radio-button value="{{corporation.candidates._id}}">Tarjeton: {{corporation.candidates.cardNumber}}
+            </mat-radio-button>
+          </div>
+
+
+        </mat-grid-tile>
+
+      </ng-container>
+
+    </mat-radio-group>
+
+
+  </mat-grid-list>
+<div class="button">
+  <button type="submit" (click)="voteCorporation()" mat-button color="primary" class="center-button">CONFIRMAR VOTACIÓN</button>
+</div>
+</form>

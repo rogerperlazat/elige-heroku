@@ -20,6 +20,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatRippleModule } from '@angular/material/core';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatRadioModule } from '@angular/material/radio';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 
 
@@ -65,6 +67,8 @@ import { CandidateVoteComponent } from './candidate-vote/candidate-vote.componen
     MatRippleModule,
     MatCheckboxModule,
     MatRadioModule,
+    MatGridListModule,
+    MatSnackBarModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyAtq-mDMZDdyIF1ptIkJVPQ8xODnlaCztc",
       authDomain: "elige-heroku.firebaseapp.com",

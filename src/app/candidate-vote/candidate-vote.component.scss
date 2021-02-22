@@ -1,0 +1,56 @@
+.candidates{
+  height: calc(400px);
+  width: 70%;
+  background-color: #336c78;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 800;
+  margin: auto;
+}
+
+.general{
+  height: 250px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #095067;
+  padding: 20px;
+}
+
+.left{
+  width: 33.3333%;
+  float: right;
+  text-align: right;
+}
+
+
+.center{
+  width: 33.3333%;
+  float: right;
+  text-align: center;
+}
+
+
+.right{
+  width: 33.3333%;
+  float: right;
+  text-align: left;
+}
+
+.title{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  color: #095067;
+}
+
+
+.center-button{
+  text-align: center;
+}
+
+.button{
+  width: 70%;
+  text-align: center;
+  margin: auto;
+  padding-top: 40px;
+}

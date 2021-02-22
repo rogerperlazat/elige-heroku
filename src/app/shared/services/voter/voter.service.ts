@@ -16,4 +16,12 @@ export class VoterService {
     return this.http.get<any>("https://elige-server.herokuapp.com/api/voters/");
   }
 
+  setVote(data: any) {
+    return this.http.post<any>("https://elige-server.herokuapp.com/api/votes/", data, {});
+  }
+
+  getStatusVote(data: any) {
+    return this.http.post<any>("https://elige-server.herokuapp.com/api/votes/votes-by-voter/", data, {});
+  }
+
 }
