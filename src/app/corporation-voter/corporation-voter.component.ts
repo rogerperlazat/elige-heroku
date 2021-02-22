@@ -37,7 +37,7 @@ export class CorporationVoterComponent implements OnInit {
 
   getVotesByVoter(idCorporation: string) {
     let dataVoter: any = {};
-    dataVoter.idVoter = "1";
+    dataVoter.idVoter = localStorage.getItem("idVoter");
     dataVoter.idCorporation = idCorporation;
     console.log(dataVoter);
     this.voterService.getStatusVote(dataVoter).subscribe((res: any) => {

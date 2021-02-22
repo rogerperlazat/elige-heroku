@@ -19,7 +19,7 @@ export class AuthComponent implements OnInit {
   ngOnInit(): void {
     this.voter = this.route.snapshot.params.voter;
     this.getVoter(this.voter);
-    console.log(this.voter);
+    localStorage.setItem("idVoter", this.voter);
   }
 
   getVoter(voter: string){

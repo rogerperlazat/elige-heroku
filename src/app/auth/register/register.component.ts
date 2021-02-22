@@ -58,13 +58,12 @@ export class RegisterComponent implements OnInit {
   tryRegister(value){
     this.authService.doRegister(value)
     .then(res => {
-      console.log(res);
       const voter:any = {};
       voter.uid = res.user.uid;
+      localStorage.setItem("token", res.user.refreshToken)
       this.votersService.updateVoterById(this.idVoter, voter).subscribe((res: any) => {
-        console.log(res);
         if(res._id){
-          this.router.navigate(["corporaciones"]);
+          this.router.navigate(["selecionar-corporacion"]);
         }
       });
       this.errorMessage = "";

@@ -51,7 +51,7 @@ export class CandidateVoteComponent implements OnInit {
     }
 
     let vote: any = this.votesForm.value;
-    vote.idVoter = "1";
+    vote.idVoter = localStorage.getItem("idVoter");
     this.voterService.setVote(vote).subscribe((res: any) => {
       this.corporations = res;
       this.openSnackBar("Gracias por su voto", "");

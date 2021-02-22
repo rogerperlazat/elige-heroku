@@ -11,7 +11,6 @@
       <input type="password" matInput #input placeholder="***+" formControlName="password">
     </mat-form-field>
     <label class="error">{{errorMessage}}</label>
-    <label class="success">{{successMessage | json}}</label>
   </div>
   <button type="submit" (click)="tryLogin(loginForm.value)" mat-button color="primary">Iniciar Sesion</button>
 </form>

@@ -1,3 +1,4 @@
+import { VotersService } from './../../shared/services/voters/voters.service';
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
@@ -13,7 +14,8 @@ import { AuthService } from '../../../app/shared/services/auth/auth.service';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public afAuth: AngularFireAuth, private router: Router, private authService: AuthService, private formBuilder: FormBuilder) {
+  constructor(public afAuth: AngularFireAuth, private router: Router, private authService: AuthService, private formBuilder: FormBuilder,
+    private votersService: VotersService) {
 
     this.createFormAuth();
 
@@ -43,7 +45,8 @@ export class LoginComponent implements OnInit {
     this.authService.doLogin(value)
     .then(res => {
       console.log(res);
-      this.router.navigate(["corporaciones"]);
+      localStorage.setItem("token", res.user.refreshToken)
+      this.router.navigate(["selecionar-corporacion"]);
       this.errorMessage = "";
       this.successMessage = res;
     }, err => {
