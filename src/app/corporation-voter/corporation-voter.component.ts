@@ -1,3 +1,4 @@
+import { GroupsService } from './../shared/services/groups/groups.service';
 import { VoterService } from './../shared/services/voter/voter.service';
 import { CorporationsService } from './../shared/services/corporations/corporations.service';
 import { Component, OnInit } from '@angular/core';
@@ -18,14 +19,16 @@ export class CorporationVoterComponent implements OnInit {
     private router: Router,
     private voterService: VoterService,
     private _snackBar: MatSnackBar,
+    private groupsService: GroupsService,
     private corporationsService: CorporationsService) { }
 
   ngOnInit(): void {
-    this.getCorporations();
+    this.getGroups(localStorage.getItem("idGroup"));
+
   }
 
-  getCorporations() {
-    this.corporationsService.getCorporations().subscribe((res: any) => {
+  getCorporations(idGrade: string) {
+    this.corporationsService.getCorporationsGrades(idGrade).subscribe((res: any) => {
       this.corporations = res;
     });
   }
@@ -46,6 +49,12 @@ export class CorporationVoterComponent implements OnInit {
       }else{
         this.router.navigate(["votar-candidato", { corporation: idCorporation }]);
       }
+    });
+  }
+
+  getGroups(idGroup: string) {
+    this.groupsService.getGroup(idGroup).subscribe((res: any) => {
+      this.getCorporations(res.idGrade);
     });
   }
 

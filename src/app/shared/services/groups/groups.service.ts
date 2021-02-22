@@ -16,4 +16,8 @@ export class GroupsService {
     return this.http.get<any>("https://elige-server.herokuapp.com/api/groups/");
   }
 
+  getGroup(id: string) {
+    return this.http.get<any>("https://elige-server.herokuapp.com/api/groups/"+id);
+  }
+
 }

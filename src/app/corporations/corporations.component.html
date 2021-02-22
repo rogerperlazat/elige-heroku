@@ -41,11 +41,38 @@
     <td>Imagen</td>
     <td>Jornada</td>
     <td>Estado</td>
+    <td>Grados</td>
   </tr>
   <tr *ngFor="let corporation of corporations">
     <td>{{corporation.corporation}}</td>
     <td>{{corporation.image}}</td>
     <td>{{corporation.time}}</td>
     <td>{{corporation.status}}</td>
+    <td>{{corporation.grades | json}}</td>
   </tr>
 </table>
+
+<h1>Asociar corporaciones</h1>
+<form [formGroup]="gradesForm">
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Corporaciones</mat-label>
+      <mat-select formControlName="idCorporation">
+        <ng-container *ngFor="let corporation of corporations">
+          <mat-option value="{{corporation._id}}">{{corporation.corporation}}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="form-group">
+    <mat-form-field appearance="fill">
+      <mat-label>Grado</mat-label>
+      <mat-select formControlName="idGrade">
+        <ng-container *ngFor="let grade of grades">
+          <mat-option value="{{grade._id}}">{{grade.title}}</mat-option>
+        </ng-container>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <button type="submit" (click)="saveGradesorporations()" mat-button color="primary">Asociar</button>
+</form>

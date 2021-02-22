@@ -38,7 +38,7 @@ export class SearchVotersComponent implements OnInit {
 
     this.votersService.getVoter(this.identificationForm.value).subscribe((res: any) => {
       if(res.lenght != 0){
-        this.router.navigate(["registro", { voter: res[0]._id }]);
+        this.router.navigate(["registro", { voter: res[0]._id, group: res[0].groupId }]);
       }
     });
   }

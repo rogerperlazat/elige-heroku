@@ -14,4 +14,14 @@ export class CorporationsService {
   getCorporations() {
     return this.http.get<any>("https://elige-server.herokuapp.com/api/corporations/");
   }
+
+  getCorporationsGrades(grade: string) {
+    return this.http.get<any>("https://elige-server.herokuapp.com/api/corporations/get-grades-corporation/"+grade);
+  }
+
+  addGradesCorporation(data: any) {
+    let grades: any = {}
+    grades.idGrade = data.idGrade;
+    return this.http.put<any>("https://elige-server.herokuapp.com/api/corporations/add-grades-corporation/"+data.idCorporation, data, {});
+  }
 }
