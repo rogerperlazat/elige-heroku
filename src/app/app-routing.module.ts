@@ -1,3 +1,5 @@
+import { CandidateVoteComponent } from './candidate-vote/candidate-vote.component';
+import { CorporationVoterComponent } from './corporation-voter/corporation-voter.component';
 import { CandidatesComponent } from './candidates/candidates.component';
 import { VoterComponent } from './voter/voter.component';
 import { GroupsComponent } from './groups/groups.component';
@@ -36,6 +38,14 @@ const routes: Routes = [
   {
     path: 'candidatos',
     component: CandidatesComponent
+  },
+  {
+    path: 'selecionar-corporacion',
+    component: CorporationVoterComponent
+  },
+  {
+    path: 'votar-candidato',
+    component: CandidateVoteComponent
   }
 ];
 

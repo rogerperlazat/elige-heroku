@@ -17,6 +17,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { AuthComponent } from './auth/auth.component';
 import { MatTabsModule } from '@angular/material/tabs';
+import { MatRippleModule } from '@angular/material/core';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatRadioModule } from '@angular/material/radio';
+
 
 
 import { AngularFireModule } from '@angular/fire';
@@ -27,6 +31,8 @@ import { GradesComponent } from './grades/grades.component';
 import { GroupsComponent } from './groups/groups.component';
 import { VoterComponent } from './voter/voter.component';
 import { CandidatesComponent } from './candidates/candidates.component';
+import { CorporationVoterComponent } from './corporation-voter/corporation-voter.component';
+import { CandidateVoteComponent } from './candidate-vote/candidate-vote.component';
 
 
 @NgModule({
@@ -40,7 +46,9 @@ import { CandidatesComponent } from './candidates/candidates.component';
     GradesComponent,
     GroupsComponent,
     VoterComponent,
-    CandidatesComponent
+    CandidatesComponent,
+    CorporationVoterComponent,
+    CandidateVoteComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +62,9 @@ import { CandidatesComponent } from './candidates/candidates.component';
     MatButtonModule,
     MatTableModule,
     MatTabsModule,
+    MatRippleModule,
+    MatCheckboxModule,
+    MatRadioModule,
     AngularFireModule.initializeApp({
       apiKey: "AIzaSyAtq-mDMZDdyIF1ptIkJVPQ8xODnlaCztc",
       authDomain: "elige-heroku.firebaseapp.com",

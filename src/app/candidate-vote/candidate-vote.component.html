@@ -1,0 +1,14 @@
+<mat-radio-group formControlName="">
+
+  <ng-container *ngFor="let candidate of candidates">
+
+    <div class="example-ripple-container mat-elevation-z4" matRipple [matRippleCentered]="true"
+      [matRippleDisabled]="false">
+      <img src="{{candidate.image}}" />
+      <p>{{candidate.cardNumber}}</p>
+      <mat-radio-button value="{{candidate.idVoter}}" >{{candidate.cardNumber}}</mat-radio-button>
+    </div>
+
+  </ng-container>
+
+</mat-radio-group>

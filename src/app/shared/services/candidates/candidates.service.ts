@@ -16,4 +16,8 @@ export class CandidatesService {
   getCandidates() {
     return this.http.get<any>("https://elige-server.herokuapp.com/api/candidates/");
   }
+
+  getCandidatesCorporation(id: string) {
+    return this.http.get<any>("https://elige-server.herokuapp.com/api/candidates/corporation/"+id);
+  }
 }
