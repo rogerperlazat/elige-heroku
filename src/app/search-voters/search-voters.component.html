@@ -1,25 +1,43 @@
-<form class="example-form center" [formGroup]="identificationForm" (ngSubmit)="searchVoter()">
-  <div class="example-container">
+<div class="general">
 
-    <mat-form-field appearance="fill">
-      <mat-label>Tipo de documento</mat-label>
-      <mat-select formControlName="type">
-        <mat-option value="1">Tarjeta de indentidad</mat-option>
-        <mat-option value="2">Cedula</mat-option>
-        <mat-option value="3">NES</mat-option>
-      </mat-select>
-    </mat-form-field>
-
-    <mat-form-field appearance="fill">
-      <mat-label>Numero de documento</mat-label>
-      <input type="text" matInput #input placeholder="1032437..." formControlName="number">
-    </mat-form-field>
-
-    <div class="example-button-row">
-      <button mat-button color="primary" type="submit">Consultar</button>
-    </div>
-
+  <div class="left">
+    <p>ELIGE</p>
+    <p>Gobierno Escolar 2021</p>
   </div>
-</form>
+
+  <div class="center">
+    <img src="/assets/images/logo.jpeg" height="200px" />
+  </div>
+
+  <div class="right">
+    <p>Colegio CEDID San Pablo</p>
+  </div>
+
+</div>
+<div>
+  <form class="example-form centerf" [formGroup]="identificationForm" (ngSubmit)="searchVoter()">
+    <div class="example-container">
+
+      <mat-form-field appearance="fill">
+        <mat-label>Tipo de documento</mat-label>
+        <mat-select formControlName="type">
+          <mat-option value="1">Tarjeta de indentidad</mat-option>
+          <mat-option value="2">Cedula</mat-option>
+          <mat-option value="3">NES</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="fill">
+        <mat-label>Numero de documento</mat-label>
+        <input type="text" matInput #input placeholder="1032437..." formControlName="number">
+      </mat-form-field>
+
+      <div class="example-button-row">
+        <button mat-button color="primary" type="submit">Consultar</button>
+      </div>
+
+    </div>
+  </form>
 
 
+</div>

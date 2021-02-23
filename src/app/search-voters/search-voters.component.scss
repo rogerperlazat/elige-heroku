@@ -1,4 +1,63 @@
-.center{
+.centerf{
   text-align: center;
-  margin-top: 400px;
+}
+
+
+.candidates{
+  height: calc(400px);
+  width: 70%;
+  background-color: #095067;
+  text-align: center;
+  color: #ffffff;
+  font-weight: 800;
+  margin: auto;
+}
+
+
+.general{
+  height: 250px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #095067;
+  padding: 20px;
+  padding-top: 100px;
+}
+
+.left{
+  width: 33.3333%;
+  float: right;
+  text-align: right;
+}
+
+
+.center{
+  width: 33.3333%;
+  float: right;
+  text-align: center;
+}
+
+
+.right{
+  width: 33.3333%;
+  float: right;
+  text-align: left;
+}
+
+.title{
+  text-align: center;
+  font-size: 30px;
+  font-weight: 500;
+  color: #095067;
+}
+
+
+.center-button{
+  text-align: center;
+}
+
+.button{
+  width: 70%;
+  text-align: center;
+  margin: auto;
+  padding-top: 40px;
 }
