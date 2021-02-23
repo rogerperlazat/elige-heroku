@@ -14,7 +14,8 @@
     <div class="right">
       <p>Colegio CEDID San Pablo</p>
       <p>Bienvenido(a)</p>
-      <p>Votante</p>
+      <p>{{voter | uppercase}}</p>
+      <button type="submit" (click)="back()" mat-button color="primary" class="center-button">Volver</button>
     </div>
 
   </div>
@@ -49,3 +50,6 @@
   <button type="submit" (click)="voteCorporation()" mat-button color="primary" class="center-button">CONFIRMAR VOTACIÓN</button>
 </div>
 </form>
+
+
+<app-footer></app-footer>

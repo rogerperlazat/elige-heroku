@@ -14,6 +14,7 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 export class CorporationVoterComponent implements OnInit {
 
   public corporations: any;
+  public voter: string = localStorage.getItem("name");
 
   constructor(private formBuilder: FormBuilder,
     private router: Router,

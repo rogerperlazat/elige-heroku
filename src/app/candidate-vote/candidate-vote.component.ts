@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { MatSnackBar } from '@angular/material/snack-bar';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-candidate-vote',
@@ -15,12 +16,14 @@ export class CandidateVoteComponent implements OnInit {
   public votesForm: FormGroup;
   public corporations: any;
   public corporation: string;
+  public voter: string = localStorage.getItem("name");
 
   constructor(private formBuilder: FormBuilder,
     private router: Router,
     private route: ActivatedRoute,
     private _snackBar: MatSnackBar,
     private candidatesService: CandidatesService,
+    private _location: Location,
     private voterService: VoterService) { }
 
   ngOnInit(): void {
@@ -63,6 +66,10 @@ export class CandidateVoteComponent implements OnInit {
     this._snackBar.open(message, action, {
       duration: 200,
     });
+  }
+
+  back(){
+    this._location.back();
   }
 
 }
