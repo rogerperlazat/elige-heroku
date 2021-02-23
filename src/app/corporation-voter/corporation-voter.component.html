@@ -20,7 +20,7 @@
 <h1 class="title">Seleccione una corporación</h1>
 <mat-grid-list cols="2" rowHeight="600px" class="candidates">
   <ng-container *ngFor="let corporation of corporations">
-    <mat-grid-tile>
+    <mat-grid-tile *ngIf="gruops.time == corporation.time">
 
       <div class="example-ripple-container mat-elevation-z4" (click)="voteCorporation(corporation._id)" matRipple
         [matRippleCentered]="true">
