@@ -1,3 +1,4 @@
+import { ResultsComponent } from './results/results.component';
 import { GuardGuard } from './shared/guard/guard.guard';
 import { CandidateVoteComponent } from './candidate-vote/candidate-vote.component';
 import { CorporationVoterComponent } from './corporation-voter/corporation-voter.component';
@@ -50,7 +51,12 @@ const routes: Routes = [
     path: 'votar-candidato',
     canActivate: [GuardGuard],
     component: CandidateVoteComponent
+  },
+  {
+    path: 'resultados-votaciones',
+    component: ResultsComponent
   }
+
 ];
 
 

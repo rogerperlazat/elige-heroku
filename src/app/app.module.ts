@@ -37,6 +37,7 @@ import { CorporationVoterComponent } from './corporation-voter/corporation-voter
 import { CandidateVoteComponent } from './candidate-vote/candidate-vote.component';
 import { FooterComponent } from './footer/footer.component';
 import { PosfooterComponent } from './posfooter/posfooter.component';
+import { ResultsComponent } from './results/results.component';
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { PosfooterComponent } from './posfooter/posfooter.component';
     CorporationVoterComponent,
     CandidateVoteComponent,
     FooterComponent,
-    PosfooterComponent
+    PosfooterComponent,
+    ResultsComponent
   ],
   imports: [
     BrowserModule,

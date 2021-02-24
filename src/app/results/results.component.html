@@ -1,0 +1,15 @@
+<table class="paleBlueRows">
+  <tr>
+    <td>Corporacion</td>
+    <td>Candidato</td>
+    <td>Votos</td>
+  </tr>
+  <tr *ngFor="let candidate of candidates">
+    <td>{{(candidate.candidates ? candidate.candidates.corporation : "")}}</td>
+    <td>{{(candidate.candidates ? candidate.candidates.voters[0].name : "")}}</td>
+    <td>{{candidate.count}}</td>
+  </tr>
+</table>
+
+
+

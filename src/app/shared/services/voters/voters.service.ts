@@ -20,4 +20,12 @@ export class VotersService {
     return this.http.put<any>("https://elige-server.herokuapp.com/api/voters/"+id, data);
   }
 
+  getVotes(){
+    return this.http.get<any>("https://elige-server.herokuapp.com/api/votes/");
+  }
+
+  getCorporationCandidate(idCandidate){
+    return this.http.get<any>("https://elige-server.herokuapp.com/api/votes/votes-by-candidate/"+idCandidate);
+  }
+
 }
