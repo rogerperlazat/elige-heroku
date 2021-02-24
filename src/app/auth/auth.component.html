@@ -1,43 +1,49 @@
-<table class="mat-elevation-z8">
-  <tr>
-    <td>
-      Tipo de documento
-    </td>
-    <td>
-      <span *ngIf="detailVoter.idPiType == 1">Tarjeta de identidad</span>
-      <span *ngIf="detailVoter.idPiType == 2">Cedula</span>
-      <span *ngIf="detailVoter.idPiType == 3">NES</span>
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Numero de documento
-    </td>
-    <td>
-      {{detailVoter.piNumber}}
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Nombres y apellidos
-    </td>
-    <td>
-      {{detailVoter.name}}
-    </td>
-  </tr>
-  <tr>
-    <td>
-      Voto
-    </td>
-    <td>
-      <span *ngIf="detailVoter.hasVoted">Si</span>
-      <span *ngIf="!detailVoter.hasVoted">No</span>
-    </td>
-  </tr>
-</table>
+<div class="center">
+  <table class="paleBlueRows">
+    <tr>
+      <td style="font-weight: 900;">
+        Tipo de documento
+      </td>
+      <td>
+        <span *ngIf="detailVoter.idPiType == 1">Tarjeta de identidad</span>
+        <span *ngIf="detailVoter.idPiType == 2">Cedula</span>
+        <span *ngIf="detailVoter.idPiType == 3">NES</span>
+      </td>
+    </tr>
+    <tr>
+      <td style="font-weight: 900;">
+        Numero de documento
+      </td>
+      <td>
+        {{detailVoter.piNumber}}
+      </td>
+    </tr>
+    <tr>
+      <td style="font-weight: 900;">
+        Nombres y apellidos
+      </td>
+      <td>
+        {{detailVoter.name}}
+      </td>
+    </tr>
+    <tr>
+      <td style="font-weight: 900;">
+        Voto
+      </td>
+      <td>
+        <span *ngIf="detailVoter.hasVoted">Si</span>
+        <span *ngIf="!detailVoter.hasVoted">No</span>
+      </td>
+    </tr>
+  </table>
+</div>
 
-<h3>Autenticacion</h3>
-<mat-tab-group animationDuration="1000ms">
-  <mat-tab label="Registro" *ngIf="detailVoter.uid == null"><app-register [idVoter]="voter"></app-register></mat-tab>
-  <mat-tab label="Inicio de Sesion"><app-login></app-login></mat-tab>
+<h1 class="title">Autenticacion</h1>
+<mat-tab-group animationDuration="1000ms" mat-align-tabs="center" color="accent">
+  <mat-tab label="Registro" *ngIf="detailVoter.uid == null">
+    <app-register [idVoter]="voter"></app-register>
+  </mat-tab>
+  <mat-tab label="Inicio de Sesion">
+    <app-login></app-login>
+  </mat-tab>
 </mat-tab-group>

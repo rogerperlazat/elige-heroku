@@ -1,16 +1,20 @@
-<form [formGroup]="loginForm">
-  <div class="form-group">
-    <mat-form-field appearance="fill">
-      <mat-label>Correo Electrónico</mat-label>
-      <input type="email" matInput #input placeholder="correo@dominio.com" formControlName="email">
-    </mat-form-field>
+<div class="login-page">
+  <div class="form">
+    <form [formGroup]="loginForm">
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Correo Electrónico</mat-label>
+          <input type="email" matInput #input placeholder="correo@dominio.com" formControlName="email">
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-label>Contraseña</mat-label>
+          <input type="password" matInput #input placeholder="***+" formControlName="password">
+        </mat-form-field>
+        <label class="error">{{errorMessage}}</label>
+      </div>
+      <button type="submit" (click)="tryLogin(loginForm.value)" mat-raised-button color="accent">Iniciar Sesion</button>
+    </form>
   </div>
-  <div class="form-group">
-    <mat-form-field appearance="fill">
-      <mat-label>Contraseña</mat-label>
-      <input type="password" matInput #input placeholder="***+" formControlName="password">
-    </mat-form-field>
-    <label class="error">{{errorMessage}}</label>
-  </div>
-  <button type="submit" (click)="tryLogin(loginForm.value)" mat-button color="primary">Iniciar Sesion</button>
-</form>
+</div>
