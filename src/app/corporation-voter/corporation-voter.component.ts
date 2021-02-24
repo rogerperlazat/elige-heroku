@@ -36,7 +36,14 @@ export class CorporationVoterComponent implements OnInit {
   }
 
   voteCorporation(id: string) {
-    this.getVotesByVoter(id);
+    let index = this.corporations.findIndex(reponse => reponse._id == id);
+
+    if(this.corporations[index].status == 1){
+      this.getVotesByVoter(id);
+    }else{
+      this.openSnackBar("La votacion para esta corporacion no ha sido activada, intente mas tarde.", "");
+    }
+
   }
 
 
@@ -64,7 +71,7 @@ export class CorporationVoterComponent implements OnInit {
 
   openSnackBar(message: string, action: string) {
     this._snackBar.open(message, action, {
-      duration: 1000,
+      duration: 3000,
     });
   }
 

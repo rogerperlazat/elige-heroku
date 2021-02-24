@@ -65,6 +65,12 @@ export class CorporationsComponent implements OnInit {
     });
   }
 
+  activeCorporation(active: number, idCorporation: string){
+    this.corporationsService.activeCorporation(active, idCorporation).subscribe((res: any) => {
+      this.getCorporations();
+  });
+  }
+
   saveGradesorporations() {
     if(this.gradesForm.invalid){
       return;

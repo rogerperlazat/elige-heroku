@@ -24,4 +24,11 @@ export class CorporationsService {
     grades.idGrade = data.idGrade;
     return this.http.put<any>("https://elige-server.herokuapp.com/api/corporations/add-grades-corporation/"+data.idCorporation, data, {});
   }
+
+
+  activeCorporation(active: number, idCorporation: string) {
+    let corporation: any = {}
+    corporation.active = active;
+    return this.http.put<any>("https://elige-server.herokuapp.com/api/corporations/active-corporation/"+idCorporation, corporation, {});
+  }
 }

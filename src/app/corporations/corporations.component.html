@@ -35,19 +35,26 @@
   <button type="submit" (click)="saveCorporations()" mat-button color="primary">Guardar</button>
 </form>
 
-<table>
+<table class="paleBlueRows">
   <tr>
+    <td>Estado</td>
     <td>Corporacion</td>
     <td>Imagen</td>
     <td>Jornada</td>
-    <td>Estado</td>
     <td>Grados</td>
   </tr>
   <tr *ngFor="let corporation of corporations">
+    <td>
+      <ng-container *ngIf="corporation.status == 1">
+        <button (click)="activeCorporation(0, corporation._id)" mat-raised-button color="accent">Activo</button>
+      </ng-container>
+      <ng-container *ngIf="corporation.status == 0">
+        <button (click)="activeCorporation(1,  corporation._id)" mat-raised-button color="warn">Inactivo</button>
+      </ng-container>
+    </td>
     <td>{{corporation.corporation}}</td>
-    <td>{{corporation.image}}</td>
+    <td><img src="{{corporation.image}}" height="50px"/></td>
     <td>{{corporation.time}}</td>
-    <td>{{corporation.status}}</td>
     <td>{{corporation.grades | json}}</td>
   </tr>
 </table>
